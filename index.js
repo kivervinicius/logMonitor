@@ -9,24 +9,24 @@ var express = require('express'),
 // Routing
 app.use(express.static(__dirname + '/public'));
 
-var mnt = new LogMonitor(path);
-
-
 io.on('connection', function(socket){
+    var logMonitor = new LogMonitor(path);
 
-    socket.emit("init", {
-        path: path,
-        files: LogMonitor.files        
+    logMonitor.on("init", obj => {
+        socket.emit("init", obj);  
     });
 
-    mnt.on("change", log => {
-        console.log(log.data);
+    logMonitor.on("change", log => {
         socket.emit("changeFile", log);
     });
 
-    mnt.on("load", log => {
-        console.log(log.data);
+    logMonitor.on("load", log => {
         socket.emit("loadFile", log);
+    });
+
+    socket.on("disconnect", function(){
+        logMonitor = null;
+        delete logMonitor;
     });
 });
 
