@@ -1,0 +1,28 @@
+{
+  "name": "logmonitor",
+  "version": "0.0.1",
+  "description": "Monitor de logs com NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kiver Teixeira",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kivervinicius/logMonitor.git"
+  },
+  "keywords": [
+    "monitor",
+    "tail"
+  ],
+  "bugs": {
+    "url": "https://github.com/kivervinicius/logMonitor/issues"
+  },
+  "homepage": "https://github.com/kivervinicius/logMonitor#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.4.8",
+    "tail": "^1.2.1"
+  }
+}
