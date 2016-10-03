@@ -11,12 +11,13 @@ body, html {
 
 
 aside {
-    width: 200px;
+    width: 240px;
     height: 100%;
     position: fixed;
     background: #000;
     color: #fff;
     text-align: center;
+    overflow: auto;
 }
 
 #logFiles {
@@ -39,12 +40,17 @@ aside {
     color: #000;
     background: #fff;
 }
+#logFiles a.error{
+    color: red;
+}
 section {
-    width: calc(100% - 200px);
-    margin-left: 200px;
+    width: calc(100% - 245px);
+    height: 100%;
+    margin-left: 245px;
     background: #fff;
     padding: 10px;
     box-sizing: border-box;
+    overflow: auto;
 }
 #logs pre {
     display: none;
